@@ -65,7 +65,7 @@ defmodule PublicSufx.RulesParser do
 
   @doc false
   # We can only convert domain's to punycode so do not pass through operators
-  def punycode_domain("*" <> rule), do: "*" <> punycode_domain(rule)
+  def punycode_domain("*." <> rule), do: "*." <> punycode_domain(rule)
   def punycode_domain("!" <> rule), do: "!" <> punycode_domain(rule)
 
   def punycode_domain(rule) do
